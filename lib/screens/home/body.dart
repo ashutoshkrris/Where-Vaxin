@@ -37,10 +37,10 @@ class _HomeBodyState extends State<HomeBody> {
                   : Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Container(
-                        height: 1000,
+                        height: 500,
                         child: ListView.builder(
                           shrinkWrap: true,
-                          physics: ClampingScrollPhysics(),
+                          physics: AlwaysScrollableScrollPhysics(),
                           itemCount: _sessions.length,
                           itemBuilder: (context, index) => SearchTile(
                             name: _sessions[index]["name"],

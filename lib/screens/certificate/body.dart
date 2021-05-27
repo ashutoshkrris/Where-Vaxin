@@ -48,7 +48,7 @@ class _CertificateBodyState extends State<CertificateBody> {
         setState(() {
           _isLoading = true;
           progress = ((rec / total) * 100).toStringAsFixed(0) + "%";
-          pd.update(msg: "Dowloading $progress", value: (rec ~/ total) * 100);
+          pd.update(msg: "Dowloading $progress", value: rec);
         });
       });
       pd.close();
