@@ -41,15 +41,14 @@ class _CertificateBodyState extends State<CertificateBody> {
       final path = dirList![0].path;
       final file = File("$path/$filename");
       ProgressDialog pd = ProgressDialog(context: context);
-
+      pd.show(msg: "Downloading", max: 100);
       await client.download(url, file.path,
           options: Options(headers: {"authorization": "Bearer $token"}),
           onReceiveProgress: (rec, total) {
-        pd.show(max: total, msg: "Downloading");
         setState(() {
           _isLoading = true;
           progress = ((rec / total) * 100).toStringAsFixed(0) + "%";
-          pd.update(msg: "Dowloading $progress", value: rec);
+          pd.update(msg: "Dowloading $progress", value: (rec ~/ total) * 100);
         });
       });
       pd.close();

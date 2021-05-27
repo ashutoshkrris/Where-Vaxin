@@ -25,7 +25,7 @@ class _HomeBodyState extends State<HomeBody> {
         children: [
           buildForm(context),
           _isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? Center(child: CircularProgressIndicator(color: Colors.deepPurple,))
               : _sessions.length == 0 && _searchDone
                   ? Padding(
                       padding: const EdgeInsets.all(12.0),
