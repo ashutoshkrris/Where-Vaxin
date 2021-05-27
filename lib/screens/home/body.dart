@@ -25,7 +25,10 @@ class _HomeBodyState extends State<HomeBody> {
         children: [
           buildForm(context),
           _isLoading
-              ? Center(child: CircularProgressIndicator(color: Colors.deepPurple,))
+              ? Center(
+                  child: CircularProgressIndicator(
+                  color: Colors.deepPurple,
+                ))
               : _sessions.length == 0 && _searchDone
                   ? Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -33,21 +36,24 @@ class _HomeBodyState extends State<HomeBody> {
                     )
                   : Padding(
                       padding: const EdgeInsets.all(12.0),
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemCount: _sessions.length,
-                        itemBuilder: (context, index) => SearchTile(
-                          name: _sessions[index]["name"],
-                          address: _sessions[index]["address"],
-                          date: _sessions[index]["date"],
-                          availableCapacityDose1: _sessions[index]
-                              ["available_capacity_dose1"],
-                          availableCapacityDose2: _sessions[index]
-                              ["available_capacity_dose2"],
-                          slots: _sessions[index]["slots"],
-                          minAgeLimit: _sessions[index]["min_age_limit"],
-                          vaccine: _sessions[index]["vaccine"],
+                      child: Container(
+                        height: 1000,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          physics: ClampingScrollPhysics(),
+                          itemCount: _sessions.length,
+                          itemBuilder: (context, index) => SearchTile(
+                            name: _sessions[index]["name"],
+                            address: _sessions[index]["address"],
+                            date: _sessions[index]["date"],
+                            availableCapacityDose1: _sessions[index]
+                                ["available_capacity_dose1"],
+                            availableCapacityDose2: _sessions[index]
+                                ["available_capacity_dose2"],
+                            slots: _sessions[index]["slots"],
+                            minAgeLimit: _sessions[index]["min_age_limit"],
+                            vaccine: _sessions[index]["vaccine"],
+                          ),
                         ),
                       ),
                     ),
