@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:where_vaxin/screens/homescreen.dart';
+import 'screens/home/homescreen.dart';
+import 'utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,10 +18,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Muli'
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(title: "Where's Vaxin?"),
-      },
+      initialRoute: HomeScreen.routeName,
+      routes: routes,
     );
   }
 }
