@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:where_vaxin/screens/home/homescreen.dart';
 import 'body.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -11,7 +12,11 @@ class AboutScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('About'),
         centerTitle: true,
-        foregroundColor: Colors.deepPurple,
+        backgroundColor: Colors.deepPurple,
+        leading: GestureDetector(
+          child: Icon(Icons.home),
+          onTap: () => Navigator.pushReplacementNamed(context, HomeScreen.routeName),
+        ),
       ),
       body: AboutBody(),
     );

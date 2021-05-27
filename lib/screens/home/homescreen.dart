@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(LocalData.bottomNavList[_selectedTab]["appBarTitle"]),
         centerTitle: true,
+        automaticallyImplyLeading: true,
         backgroundColor: Colors.deepPurple,
         actions: [
           PopupMenuButton<String>(
