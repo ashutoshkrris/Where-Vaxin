@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../about/about_screen.dart';
 import '../../data/data.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,11 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           PopupMenuButton<String>(
             onSelected: (v) {
-              showAlertDialog(context);
+              if (v == 'exit')
+                showAlertDialog(context);
+              else if (v == 'about')
+                Navigator.pushReplacementNamed(context, AboutScreen.routeName);
             },
             itemBuilder: (BuildContext context) => [
               PopupMenuItem<String>(
-                value: 'item',
+                value: 'about',
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  runSpacing: 20,
+                  children: [
+                    Icon(
+                      Icons.info_outline,
+                      color: Colors.black,
+                    ),
+                    Text(' About'),
+                  ],
+                ),
+              ),
+              PopupMenuItem<String>(
+                value: 'exit',
                 child: Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
                   runSpacing: 20,

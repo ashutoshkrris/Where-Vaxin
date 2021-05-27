@@ -1,8 +1,7 @@
-import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../components/search_tile.dart';
-import 'package:http/http.dart' as http;
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -28,7 +27,10 @@ class _HomeBodyState extends State<HomeBody> {
           _isLoading
               ? Center(child: CircularProgressIndicator())
               : _sessions.length == 0 && _searchDone
-                  ? Text("No results")
+                  ? Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text("No results found for this location"),
+                    )
                   : Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: ListView.builder(
@@ -118,12 +120,12 @@ class _HomeBodyState extends State<HomeBody> {
         _isLoading = true;
       });
       var baseUrl = "https://cdn-api.co-vin.in/api";
-      var apiUrl = Uri.parse(
-          "$baseUrl/v2/appointment/sessions/public/findByPin?pincode=$pincode&date=$date");
-      var response = await http.get(apiUrl);
+      var apiUrl =
+          "$baseUrl/v2/appointment/sessions/public/findByPin?pincode=$pincode&date=$date";
+      var response = await Dio().get(apiUrl);
       setState(() {
         _isLoading = false;
-        _sessions = jsonDecode(response.body)["sessions"];
+        _sessions = response.data["sessions"];
         _searchDone = true;
       });
     }
