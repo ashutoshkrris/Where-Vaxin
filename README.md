@@ -1,6 +1,18 @@
-# where_vaxin
+<p align="center">
+    <a href="https://iread.ga">
+        <img src="https://raw.githubusercontent.com/ashutoshkrris/Where-Vaxin/master/assets/images/icon.png" width="20%">
+    </a>
+</p>
 
-A new Flutter project.
+<h1 align="center">
+    Where's Vaxin?
+</h1>
+
+<p align="center">
+    Download the APK from <a href="https://github.com/ashutoshkrris/Where-Vaxin/blob/master/where-vaxin.apk">here</a>.
+</p>
+
+A Flutter app to find vaccination slots and view vaccination-certificate.
 
 ## Getting Started
 
