@@ -27,8 +27,9 @@ class _HomeBodyState extends State<HomeBody> {
           _isLoading
               ? Center(
                   child: CircularProgressIndicator(
-                  color: Colors.deepPurple,
-                ))
+                    color: Colors.deepPurple,
+                  ),
+                )
               : _sessions.length == 0 && _searchDone
                   ? Padding(
                       padding: const EdgeInsets.all(12.0),

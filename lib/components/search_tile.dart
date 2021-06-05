@@ -78,7 +78,9 @@ class SearchTile extends StatelessWidget {
                   "$vaccine",
                   style: TextStyle(
                     fontSize: 15,
-                    color: Colors.blue,
+                    color: vaccine == 'COVISHIELD'
+                        ? Colors.blue
+                        : Colors.pink,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
