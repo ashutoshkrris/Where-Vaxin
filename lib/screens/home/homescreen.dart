@@ -83,7 +83,6 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: (int tabIndex) {
         setState(() {
           _selectedTab = tabIndex;
-          print(_selectedTab);
         });
       },
     );

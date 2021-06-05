@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import '../../components/search_tile.dart';
 
@@ -38,8 +39,7 @@ class _HomeBodyState extends State<HomeBody> {
                   : Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Container(
-                        padding: EdgeInsets.only(bottom: 85),
-                        height: 500,
+                        height: (MediaQuery.of(context).size.height) * 0.64,
                         child: ListView.builder(
                           shrinkWrap: true,
                           physics: AlwaysScrollableScrollPhysics(),
