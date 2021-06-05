@@ -1,7 +1,5 @@
 <p align="center">
-    <a href="https://iread.ga">
-        <img src="https://raw.githubusercontent.com/ashutoshkrris/Where-Vaxin/master/assets/images/icon.png" width="20%">
-    </a>
+    <img src="https://raw.githubusercontent.com/ashutoshkrris/Where-Vaxin/master/assets/images/icon.png" width="20%">
 </p>
 
 <h1 align="center">
