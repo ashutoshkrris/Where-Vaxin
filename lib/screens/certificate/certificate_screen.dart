@@ -16,8 +16,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
   void _listenForPermissionStatus() async {
     final status = await Permission.storage.status;
 
-    setState(() {
-    });
+    setState(() {});
     switch (status) {
       case PermissionStatus.denied:
         requestPermission();
@@ -46,9 +45,7 @@ class _CertificateScreenState extends State<CertificateScreen> {
   Future<void> requestPermission() async {
     final status = await Permission.storage.request();
 
-    setState(() {
-      print(status);
-    });
+    setState(() {});
   }
 
   @override

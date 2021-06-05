@@ -38,6 +38,7 @@ class _HomeBodyState extends State<HomeBody> {
                   : Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Container(
+                        padding: EdgeInsets.only(bottom: 85),
                         height: 500,
                         child: ListView.builder(
                           shrinkWrap: true,
